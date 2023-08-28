@@ -1,0 +1,46 @@
+version: '2.1'
+
+services:
+  news-aggregator-react:
+    container_name: news-aggregator-react
+    image: node:18.16.0
+    command: bash -c "npm install && npm run dev -- --host --port=3000"
+    ports:
+      - '3000:3000'
+    environment:
+      - VITE_BACKEND_URL=http://localhost:8000
+    volumes:
+      - ./news-aggregator-react:/app
+    working_dir: /app
+    depends_on:
+      - news-aggregator-laravel
+
+  news-aggregator-laravel:
+    container_name: news-aggregator-laravel
+    build:
+      context: .
+    ports:
+      - '8000:8000'
+    environment:
+      - DB_HOST=news-aggregator-db
+      - DB_PORT=3306
+      - DB_USERNAME=dbuser
+      - DB_DATABASE=news-aggregator
+    volumes:
+      - ./news-aggregator-laravel:/app
+    depends_on:
+      - news-aggregator-db
+
+  news-aggregator-db:
+    container_name: news-aggregator-db
+    image: docker.io/bitnami/mariadb:10.6
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_USER=dbuser
+      - MARIADB_DATABASE=news-aggregator
+    volumes:
+      - news-aggregator-db-data:/bitnami/mariadb
+
+volumes:
+  news-aggregator-db-data:
+    driver: local

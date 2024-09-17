@@ -19,3 +19,7 @@ Right now it has 3 API sources:
 - [The New York Times](https://developer.nytimes.com/docs/articlesearch-product/1/overview)
 - [The Guardian](https://open-platform.theguardian.com/documentation/)
 - [News API](https://newsapi.org/)
+
+## Screenshots
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/b1cc1c9c-7b32-4163-9ed4-eba48017d012">

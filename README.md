@@ -23,3 +23,8 @@ Right now it has 3 API sources:
 ## Screenshots
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/b1cc1c9c-7b32-4163-9ed4-eba48017d012">
+
+<img width="1512" alt="image" src="https://github.com/user-attachments/assets/c2ae44fb-2974-4da2-aec9-8f3d408fcafd">
+
+<img width="537" alt="image" src="https://github.com/user-attachments/assets/29c19c92-7e97-4938-af74-e65c42db4037">
+
